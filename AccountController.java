@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/account")
 @RestController
 public class AccountController {
+	@Autowired
 	AccountService accountService;
 	ArrayList<Accounts> accountList = new ArrayList<Accounts>();
 	@GetMapping("/accountlist")
@@ -40,7 +42,7 @@ public class AccountController {
 //		if(account.equals(null))
 //			return "Cannot enter null values";
 		
-		accountList.add(account);
+		//accountList.add(account);
 		accountService.saveAccount(account);
 		return "Account successfully added !";
 	}

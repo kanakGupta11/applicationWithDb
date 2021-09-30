@@ -1,9 +1,10 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import antlr.collections.List;
-
+@Service
 	public class AccountService {
 		@Autowired
 		AccountRepository accountRepository;
